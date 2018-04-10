@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Ejemplo aprenderaprogramar.com</title><meta charset="utf-8">
+		<style type="text/css">
+/* Curso CSS estilos aprenderaprogramar.com*/
+
+body {font-family: Arial, Helvetica, sans-serif;}
+#tabla1{background-color: #FFFF99; padding: 11px; margin: 45px auto; width: 750px;}
+table { width: 700px; text-align: center; border-collapse: collapse; margin: 0 auto; color: #0066FF;}
+th {background-color: #0099FF; border-bottom: 1px solid white; color: #3300FF; }
+td {padding: 11px; background-color: #00FFFF; border-bottom: 1px solid white; color: #3300FF; border-top: 1px solid white; }
+tr:hover td { background-color: #3300FF; color: #00FFFF; }
+.botonForm{margin: 11px 22px; background-color: #3300FF; color: #00FFFF;}
+.editar{color: #3300FF; cursor: pointer;}
+#texto1{margin: 0 22px;}
+
+		</style>
+		<script type="text/javascript">
+var datos = new Array();
+var enEdicion = true;
+var ultimoNodoEditado;
+function editarFila(nodo){
+	var nodoTd = nodo.previousSibling;
+	if (enEdicion==true){
+		cambiarEnEdicion(nodo);
+		creaCajasTexto(nodoTd);
+		var nodoDiv = document.getElementById('botonesForm');
+		nodoDiv.innerHTML = '<span id=\'texto1\'>Pulse Aceptar para guardar los cambios o cancelar para anularlos.</span><br/>' +
+			'<input type=\'submit\' value=\'Aceptar\' class=\'botonForm\'><input type=\'reset\' value=\'Cancelar\' class=\'botonForm\' onclick=\'reiniciarFila()\'>';
+		enEdicion = false;
+	}else{
+		alert('Solo se puede editar una línea. Recargue la página para poder editar.')
+	}
+}
+function creaCajasTexto(nodoTd){
+	var nameForm = ['alimento', 'calorias', 'grasas', 'proteina', 'carbohidratos'];
+	var instruccion = new Array();
+	for(var i=0; i<5; i++){
+		datos[i] = nodoTd.textContent;
+		instruccion = '<input type=\'text\' style=\'width:70px\' name=\'' + nameForm[i] + '\' value=\'' + nodoTd.textContent + '\'>';
+		nodoTd.innerHTML = instruccion;
+		if(i<4){nodoTd = nodoTd.previousSibling;}
+	}
+	ultimoNodoEditado = nodoTd;
+}
+function reiniciarFila(){
+	var nodoDiv = document.getElementById('botonesForm');
+	for(var i=4; i>-1; i--){
+		ultimoNodoEditado.innerHTML = datos[i];
+		ultimoNodoEditado = ultimoNodoEditado.nextSibling;
+	}
+	cambiarEnEdicion(ultimoNodoEditado);
+	enEdicion = true;
+	nodoDiv.innerHTML = '';
+}
+function cambiarEnEdicion(nodo){
+	if(enEdicion==true){
+		nodo.textContent = 'En edición';
+		nodo.style.color = 'gray';
+	}else{
+		nodo.textContent = 'Editar';
+		nodo.style.color = '#3300FF';
+	}
+}
+		</script>
+	</head>
+	<body>
+		<div id="tabla1">
+		<form action="http://www.aprenderaprogramar.com" method="get">
+			<table>
+				<caption>Contenido nutricional por cada 100g de alimento.</caption>
+				<tr>
+					<th>Alimento</th><th>Calorias<br/>(kCal)</th><th>Grasas<br/>(g)</th><th>Proteina<br/>(g)</th><th>Carbohidratos<br/>(g)</th><th>Opciones</th>
+				</tr>
+				<tr>
+					<td>Arándano</td><td>49</td><td>0.2</td><td>0.4</td><td>12.7</td><td class="editar" onclick="editarFila(this)">Editar</td>
+				</tr>
+				<tr>
+					<td>Plátano</td><td>90</td><td>0.3</td><td>1.0</td><td>23.5</td><td class="editar" onclick="editarFila(this)">Editar</td>
+				</tr>
+				<tr>
+					<td>Cereza</td><td>46</td><td>0.4</td><td>0.9</td><td>10.9</td><td class="editar" onclick="editarFila(this)">Editar</td>
+				</tr>
+				<tr>
+					<td>Fresa</td><td>37</td><td>0.5</td><td>0.8</td><td>8.3</td><td class="editar" onclick="editarFila(this)">Editar</td>
+				</tr>
+			</table><br/>
+			<div id="botonesForm"></div>
+		</form>
+		</div>
+	</body>
+</html>

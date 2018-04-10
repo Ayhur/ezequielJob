@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width-device-width, user-scalable=no , initial-scale=1 , maximum-scale=1 , minimum-scale=1">
+		<title>Registro</title>
+
+
+
+		<!-- JS  -->
+		<script src="../js/registro.js"></script>
+
+		<!-- CSS  -->
+
+		<link rel="stylesheet" href="../css/styles2.css"/>
+
+	</head>
+
+	<body>
+
+		<div id="contenedorPrincipal">						 <!-- CONTENEDOR PRINCIPAL DE LA PAGINA -->
+
+			<div id="contenedorMenu" class="divContents">	 <!-- CONTENEDOR MENU DE LA PAGINA -->
+				<ul id="menu">
+				  <li id="li"><a href="#home">Home</a></li>
+				  <li id="li"><a href=".\html\registrar.html">Registrarse</a></li>
+				  <li id="li"><a href=".\html\contact.html">Contact</a></li>
+				  <li id="li"><a href=".\html\about.html">About</a></li>
+				</ul>
+			</div>
+
+			<div id="divMatrizFormulario" class="divContents">		 <!-- CONTENEDOR MENU DEL FORMULARIO REGISTRO -->
+
+				<div id="formularioRegistro" class="divContents">	<!-- FORMULARIO REGISTRO -->
+
+
+					<div id="formLeft"> <!-- CONTENEDOR IZQUIERDO CON LOS LABEL -->
+						
+						<div class="divContents3"><label> Usuario: </label></div>
+						<div class="divContents3"><label> Contraseña: </label></div>			
+						<div class="divContents3"><label> Nombre: </label></div>
+						<div class="divContents3"><label> Apellidos: </label></div>
+						<div class="divContents3"><label> Sexo: </label></div>
+						<div class="divContents3"><label> Dirección: </label></div>
+						<div class="divContents3"><label> Ciudad: </label></div>
+						<div class="divContents3"><label> C.P.: </label></div>
+					</div>	<!-- FIN CONTENEDOR IZQUIERDO CON LOS LABEL -->
+					
+					<div id="formRight">	<!-- CAJA DERECHA CON LOS INPUT TEXT -->
+						<div class="divContents2" ><input type="text" size="14" id="usuario"></div>
+						<div class="divContents2" ><input type="text" size="14" id="contraseña"></div>	
+						<div class="divContents2" ><input type="text" size="14" id="nombre"></div>
+						<div class="divContents2" ><input type="text" size="14" id="Apellidos"></div>
+
+						<div class="divContents2" >
+							<input type="radio" id="sexoH" class="gender" name="sex" value="H">Hombre
+							<input type="radio" id="sexoM" class="gender" name="sex" value="M">Mujer
+						</div>
+
+
+						<div class="divContents2" ><input type="text" size="14" id="direccion"></div>
+						<div class="divContents2" ><input type="text" size="14" id="ciudad"></div>
+						<div class="divContents2" ><input type="text" size="14" id="cPostal"></div>
+					</div>	<!-- FIN CONTENEDOR DE INPUT TEXT  -->
+				</div>  <!-- FIN FORMULARIO REGISTRO -->
+
+				<div id="botonesFormularioRegistro" class="divContents"> <!-- CAJA DE BOTONES -->
+
+					<button class="botonesRegistro" onclick="agregarUsuario();">Confirmar</button>
+					<button class="botonesRegistro" onclick="buildTable();">Mostrar Info</button>
+					<button class="botonesRegistro" src="../index.html" onclick="volver();">Volver</button>
+				</div>					<!-- fin CAJA DE BOTONES -->
+
+				<div id="cajaContenedorDeTablaMostrado">  <!-- CAJA CONTENEDOR DE LA TABLA MOSTRADO DE DATOS  -->	
+
+					<table id="tablaDatosRegistros" border="1" bgcolor="#dee6a2">
+					    <thead>
+					      <tr>
+					        <th>Usuario</th>
+					        <th>Contraseña</th>
+					        <th>Nombre</th>
+					        <th>Apellidos</th>
+					        <th>Sexo</th>
+					        <th>Direccion</th>
+					        <th>Ciudad</th>
+					        <th>Cod. Pos.</th>
+					        <th>Borrar</th>
+					        <th>Editar</th>
+					      </tr>
+					    </thead>
+					    <tbody id="tableContactBody" border="1">
+					    </tbody>
+					</table>
+
+				</div> <!-- FIN CAJA CONTENEDOR DE LA TABLA MOSTRADO DE DATOS  -->
+
+			</div>
+		</div>	 <!-- FIN CONTENEDOR PRINCIPAL DE LA PAGINA -->
+	</body>
+</html>

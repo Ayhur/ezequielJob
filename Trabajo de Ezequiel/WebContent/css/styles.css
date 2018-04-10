@@ -1,0 +1,129 @@
+
+
+
+.divContents{
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.divContents2{
+
+	margin-top: 15px;
+}
+
+#formLeft{
+
+	background-color: #E6AAA2;
+	width: 15%;
+	/*float: left;*/
+	padding-left: 25px;
+	/*margin: 0 auto;*/
+
+	/*background-color: #E6C7A2;
+	width: 15%;
+	float: left;*/
+	/*margin: 0 auto;*/	
+	/*padding-left: 300px;*/
+	/*margin-left: 25%;*/
+}
+
+.formLeft label{
+
+	font-size: 18px;
+}
+
+#formRight{
+	background-color: #E6AAA2;
+	width: 15%;
+	/*float: left;*/
+	padding-left: 25px;
+	/*margin: 0 auto;*/
+}
+
+#divContenedor{    /*Contenedor principal*/
+	background-color: #FFD9D1;
+	width: 100%;
+	height: 100%;
+	/*padding: 1%;*/
+	/*margin: 0 auto;*/
+	
+	/*margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;*/	
+}
+
+
+
+#menu{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #c2f5f7;
+
+}
+
+#ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+#li {
+    float: left;
+}
+
+#li a {
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    
+}
+
+#li a:hover {
+    background-color: #111111;
+}
+
+#divMatriz{
+	width: 100%;
+	height: 79%;
+	background-color: #A2E6CD;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+
+#contenedorMenu{
+
+	width: 100%;
+	height: 19%;
+	background-color: #D9A2E6;
+
+
+}
+
+
+#prueba{
+
+	background-color: #E6A2B2;
+}
+
+#formularioRegistro{
+
+	background-color: #DEE6A2;
+	width: 50%;
+	margin: 0 auto;
+
+
+}
+
+#divMatrizFormulario{
+	background-color: #A2C1E6;
+	float: middle;
+}
